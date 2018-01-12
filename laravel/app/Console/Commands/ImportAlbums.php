@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-use App\Place;
 use Illuminate\Console\Command;
 use App\Services\ImporterService;
 
@@ -27,9 +26,9 @@ class ImportAlbums extends Command
      */
     protected $importer;
 
-    public function __construct(ImporterService $places)
+    public function __construct(ImporterService $importer)
     {
-        $this->importer = $places;
+        $this->importer = $importer;
         parent::__construct();
     }
 
