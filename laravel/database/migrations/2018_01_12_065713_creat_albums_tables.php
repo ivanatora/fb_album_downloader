@@ -19,6 +19,9 @@ class CreatAlbumsTables extends Migration
             $table->string('fb_id', 255);
             $table->string('name', 255)->default('');
             $table->string('link', 255)->default('');
+            $table->string('author_name', 255)->default('');
+            $table->string('author_id', 255)->default('');
+            $table->dateTime('created_time');
             $table->text('description');
         });
 
@@ -36,7 +39,8 @@ class CreatAlbumsTables extends Migration
 
         Schema::create('comments', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('photo_id');
+            $table->unsignedInteger('photo_id')->nullable();
+            $table->unsignedInteger('album_id')->nullable();
             $table->dateTime('created_time');
             $table->string('poster_name', 255);
             $table->string('poster_id', 255);
@@ -44,6 +48,9 @@ class CreatAlbumsTables extends Migration
 
             $table->index('photo_id');
             $table->foreign('photo_id')->references('id')->on('photos')->onDelete('cascade');
+
+            $table->index('album_id');
+            $table->foreign('album_id')->references('id')->on('albums')->onDelete('cascade');
         });
     }
 
