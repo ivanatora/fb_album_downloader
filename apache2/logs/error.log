@@ -58,3 +58,6 @@
 [Fri Jan 12 06:46:54.426744 2018] [core:warn] [pid 10:tid 140716077291392] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
 [Fri Jan 12 06:46:54.427262 2018] [mpm_event:notice] [pid 10:tid 140716077291392] AH00489: Apache/2.4.7 (Ubuntu) mod_fastcgi/mod_fastcgi-SNAP-0910052141 configured -- resuming normal operations
 [Fri Jan 12 06:46:54.427277 2018] [core:notice] [pid 10:tid 140716077291392] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Fri Jan 12 06:49:56.125631 2018] [mpm_event:notice] [pid 10:tid 140716077291392] AH00491: caught SIGTERM, shutting down
+[Fri Jan 12 06:49:56.135825 2018] [:alert] [pid 11:tid 140716077291392] FastCGI: read() from pipe failed (0)
+[Fri Jan 12 06:49:56.135848 2018] [:alert] [pid 11:tid 140716077291392] FastCGI: the PM is shutting down, Apache seems to have disappeared - bye
